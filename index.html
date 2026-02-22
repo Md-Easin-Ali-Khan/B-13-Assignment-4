@@ -1,11 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment-4</title>
+
+    <!-- daisy+tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+    <header class="w-10/12 mx-auto pt-15">
+        <h2 class="text-3xl font-bold text-[#002C5C] mb-5">Job Application Tracker</h2>
+        <div class="grid grid-cols-3">
+            <div class="total p-5">
+                <p class="font-medium text-gray-800 text-[14px]">Total</p>
+                <p id="total" class="text-blue-600 font-bold text-2xl">4</p>
+            </div>
+            <div class="interview p-5">
+                <p class="font-medium text-gray-800 text-[14px]">Interview</p>
+                <p id="interview" class="text-sky-500 font-bold text-2xl">1</p>
+            </div>
+            <div class="rejected p-5">
+                <p class="font-medium text-gray-800 text-[14px]">Rejected</p>
+                <p id="rejected" class="text-red-500 font-bold text-2xl">0</p>
+            </div>
+        </div>
+    </header>
+    <hr class=" text-gray-500 my-7 w-10/12 mx-auto">
+
+    <div class="w-10/12 mx-auto">
+        <div class="heading flex justify-between mb-6">
+            <h2 class="font-bold text-blue-900 text-2xl">Available Jobs</h2>
+            <p>8 jobs</p>
+        </div>
+        <div class="buttons mb-4">
+            <button id="all-filter-btn" class="btn font-bold text-white text-lg bg-primary">All</button>
+            <button id="interview-filter-btn" class="btn font-bold text-gray-700 text-lg">Interview</button>
+            <button id="rejected-filter-btn" class="btn font-bold text-gray-700 text-lg">Rejected</button>
+        </div>
+    </div>
+    <main id="cards" class="w-10/12 mx-auto">
+        <!-- card-1 -->
+        <div class="card-1 p-6 border border-gray-400 rounded-lg">
+            <div class="wrap flex items-center justify-between">
+                <div class="mobile-content">
+                    <h2 class="font-bold text-blue-900 text-2xl">Mobile First Corp</h2>
+                    <p class="text-gray-700 font-semibold text-xl">React Native Developer</p>
+                </div>
+                <div class="delet">
+                    <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+            <ul class="flex my-5 gap-2 text-gray-600">
+                <li class="text-lg">Remote</li>
+                <li class="text-lg">• Full-time </li>
+                <li class="text-lg">• $130,000</li>
+                <li class="text-lg">- $175,000</li>
+            </ul>
+            <h2 class="font-semibold">NOT APPLIED</h2>
+            <p class="my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on products
+                used
+                by millions of users worldwide.</p>
+            <div class="int-rej">
+                <button class="btn border-green-600 text-green-600">INTERVIEW</button>
+                <button class="btn border-red-600 text-red-600">REJECTED</button>
+            </div>
+        </div>
+
+        <!-- card-2 -->
+        <div class="card-2 p-6 border border-gray-400 rounded-lg">
+            <div class="wrap flex items-center justify-between">
+                <div class="mobile-content">
+                    <h2 class="font-bold text-blue-900 text-2xl">Mobile First Corp</h2>
+                    <p class="text-gray-700 font-semibold text-xl">React Native Developer</p>
+                </div>
+                <div class="delet">
+                    <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+            <ul class="flex my-5 gap-2 text-gray-600">
+                <li class="text-lg">Remote</li>
+                <li class="text-lg">• Full-time </li>
+                <li class="text-lg">• $130,000</li>
+                <li class="text-lg">- $175,000</li>
+            </ul>
+            <h2 class="font-semibold">NOT APPLIED</h2>
+            <p class="my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on products
+                used
+                by millions of users worldwide.</p>
+            <div class="int-rej">
+                <button class="btn border-green-600 text-green-600">INTERVIEW</button>
+                <button class="btn border-red-600 text-red-600">REJECTED</button>
+            </div>
+        </div>
+
+        <!-- card-3 -->
+        <div class="card-3 p-6 border border-gray-400 rounded-lg">
+            <div class="wrap flex items-center justify-between">
+                <div class="mobile-content">
+                    <h2 class="font-bold text-blue-900 text-2xl">Mobile First Corp</h2>
+                    <p class="text-gray-700 font-semibold text-xl">React Native Developer</p>
+                </div>
+                <div class="delet">
+                    <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+            <ul class="flex my-5 gap-2 text-gray-600">
+                <li class="text-lg">Remote</li>
+                <li class="text-lg">• Full-time </li>
+                <li class="text-lg">• $130,000</li>
+                <li class="text-lg">- $175,000</li>
+            </ul>
+            <h2 class="font-semibold">NOT APPLIED</h2>
+            <p class="my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on products
+                used
+                by millions of users worldwide.</p>
+            <div class="int-rej">
+                <button class="btn border-green-600 text-green-600">INTERVIEW</button>
+                <button class="btn border-red-600 text-red-600">REJECTED</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
