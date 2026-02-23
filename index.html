@@ -44,93 +44,105 @@
 
         <!-- toggle buttons -->
         <div class="buttons mb-4">
-            <button onclick="toggleBtn('all-filter-btn')" id="all-filter-btn" class="btn font-bold text-lg bg-sky-600 text-white">All</button>
-            <button onclick="toggleBtn('interview-filter-btn')" id="interview-filter-btn" class="btn font-bold bg-gray-300 text-gray-500 text-lg">Interview</button>
-            <button onclick="toggleBtn('rejected-filter-btn')" id="rejected-filter-btn" class="btn font-bold bg-gray-300 text-gray-500 text-lg">Rejected</button>
+            <button onclick="toggleBtn('all-filter-btn')" id="all-filter-btn"
+                class="btn font-bold text-lg bg-sky-600 text-white">All</button>
+            <button onclick="toggleBtn('interview-filter-btn')" id="interview-filter-btn"
+                class="btn font-bold bg-gray-300 text-gray-500 text-lg">Interview</button>
+            <button onclick="toggleBtn('rejected-filter-btn')" id="rejected-filter-btn"
+                class="btn font-bold bg-gray-300 text-gray-500 text-lg">Rejected</button>
         </div>
 
+        <!-- filterd -->
+        <section id="filterd-section" class="hidden">
+
+        </section>
+
         <div id="cards" class="space-y-4">
-            <!-- card-1 -->
-            <div class="card-1 p-6 border border-gray-400 rounded-lg">
+            <div class="card p-6 border border-gray-400 rounded-lg">
                 <div class="wrap flex items-center justify-between">
                     <div class="mobile-content">
-                        <h2 class="font-bold text-blue-900 text-2xl">Mobile First Corp</h2>
-                        <p class="text-gray-700 font-semibold text-xl">React Native Developer</p>
+                        <h2 class="job-name font-bold text-blue-900 text-2xl">Mobile First Corp 1</h2>
+                        <p class="job-title text-gray-700 font-semibold text-xl">React Native Developer</p>
                     </div>
                     <div class="delet">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </div>
                 </div>
-                <ul class="flex my-5 gap-2 text-gray-600">
-                    <li class="text-lg">Remote</li>
-                    <li class="text-lg">• Full-time </li>
-                    <li class="text-lg">• $130,000</li>
-                    <li class="text-lg">- $175,000</li>
-                </ul>
-                <h2 class="font-semibold">NOT APPLIED</h2>
-                <p class="my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
+                <p class="job-description my-5 text-gray-600">• Remote • Full-time • $130,000 - $175,000</p>
+                <div><button class="btn status-btn">NOT APPLIED</button></div>
+                <p class="job-info my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
                     products
                     used
                     by millions of users worldwide.</p>
                 <div class="int-rej">
-                    <button class="btn border-green-600 text-green-600">INTERVIEW</button>
-                    <button class="btn border-red-600 text-red-600">REJECTED</button>
+                    <button class="btn interview-btn border-green-600 text-green-600">INTERVIEW</button>
+                    <button class="btn reject-btn border-red-600 text-red-600">REJECTED</button>
                 </div>
             </div>
 
-            <!-- card-2 -->
-            <div class="card-2 p-6 border border-gray-400 rounded-lg">
+            <div class="card p-6 border border-gray-400 rounded-lg">
                 <div class="wrap flex items-center justify-between">
                     <div class="mobile-content">
-                        <h2 class="font-bold text-blue-900 text-2xl">Mobile First Corp</h2>
-                        <p class="text-gray-700 font-semibold text-xl">React Native Developer</p>
+                        <h2 class="job-name font-bold text-blue-900 text-2xl">Mobile First Corp 2</h2>
+                        <p class="job-title text-gray-700 font-semibold text-xl">React Native Developer</p>
                     </div>
                     <div class="delet">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </div>
                 </div>
-                <ul class="flex my-5 gap-2 text-gray-600">
-                    <li class="text-lg">Remote</li>
-                    <li class="text-lg">• Full-time </li>
-                    <li class="text-lg">• $130,000</li>
-                    <li class="text-lg">- $175,000</li>
-                </ul>
-                <h2 class="font-semibold">NOT APPLIED</h2>
-                <p class="my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
+                <p class="job-description my-5 text-gray-600">• Remote • Full-time • $130,000 - $175,000</p>
+                <div><button class="btn status-btn">NOT APPLIED</button></div>
+                <p class="job-info my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
                     products
                     used
                     by millions of users worldwide.</p>
                 <div class="int-rej">
-                    <button class="btn border-green-600 text-green-600">INTERVIEW</button>
-                    <button class="btn border-red-600 text-red-600">REJECTED</button>
+                    <button class="btn interview-btn border-green-600 text-green-600">INTERVIEW</button>
+                    <button class="btn reject-btn border-red-600 text-red-600">REJECTED</button>
                 </div>
             </div>
 
-            <!-- card-3 -->
-            <div class="card-3 p-6 border border-gray-400 rounded-lg">
+            <div class="card p-6 border border-gray-400 rounded-lg">
                 <div class="wrap flex items-center justify-between">
                     <div class="mobile-content">
-                        <h2 class="font-bold text-blue-900 text-2xl">Mobile First Corp</h2>
-                        <p class="text-gray-700 font-semibold text-xl">React Native Developer</p>
+                        <h2 class="job-name font-bold text-blue-900 text-2xl">Mobile First Corp 3</h2>
+                        <p class="job-title text-gray-700 font-semibold text-xl">React Native Developer</p>
                     </div>
                     <div class="delet">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </div>
                 </div>
-                <ul class="flex my-5 gap-2 text-gray-600">
-                    <li class="text-lg">Remote</li>
-                    <li class="text-lg">• Full-time </li>
-                    <li class="text-lg">• $130,000</li>
-                    <li class="text-lg">- $175,000</li>
-                </ul>
-                <h2 class="font-semibold">NOT APPLIED</h2>
-                <p class="my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
+                <p class="job-description my-5 text-gray-600">• Remote • Full-time • $130,000 - $175,000</p>
+                <div><button class="btn status-btn">NOT APPLIED</button></div>
+                <p class="job-info my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
                     products
                     used
                     by millions of users worldwide.</p>
                 <div class="int-rej">
-                    <button class="btn border-green-600 text-green-600">INTERVIEW</button>
-                    <button class="btn border-red-600 text-red-600">REJECTED</button>
+                    <button class="btn interview-btn border-green-600 text-green-600">INTERVIEW</button>
+                    <button class="btn reject-btn border-red-600 text-red-600">REJECTED</button>
+                </div>
+            </div>
+
+            <div class="card p-6 border border-gray-400 rounded-lg">
+                <div class="wrap flex items-center justify-between">
+                    <div class="mobile-content">
+                        <h2 class="job-name font-bold text-blue-900 text-2xl">Mobile First Corp 4</h2>
+                        <p class="job-title text-gray-700 font-semibold text-xl">React Native Developer</p>
+                    </div>
+                    <div class="delet">
+                        <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+                <p class="job-description my-5 text-gray-600">• Remote • Full-time • $130,000 - $175,000</p>
+                <div><button class="btn status-btn">NOT APPLIED</button></div>
+                <p class="job-info my-5 text-gray-600">Build cross-platform mobile applications using React Native. Work on
+                    products
+                    used
+                    by millions of users worldwide.</p>
+                <div class="int-rej">
+                    <button class="btn interview-btn border-green-600 text-green-600">INTERVIEW</button>
+                    <button class="btn reject-btn border-red-600 text-red-600">REJECTED</button>
                 </div>
             </div>
         </div>
