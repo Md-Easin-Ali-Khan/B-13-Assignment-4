@@ -42,14 +42,16 @@
         </div>
     </header>
 
-    <main class="w-[80%] mx-auto">
+    <main class="w-[80%] mx-auto mb-14">
         <div class="mb-6">
             <!-- toggle button -->
-            <button onclick="toggleStyle('all-filter-btn')" class="bg-sky-800 rounded-md font-bold  text-white px-5 py-2"
-                id="all-filter-btn">Total</button>
-            <button onclick="toggleStyle('interview-filter-btn')" class="bg-gray-300 rounded-md font-bold text-gray-500 px-5 py-2"
+            <button onclick="toggleStyle('all-filter-btn')"
+                class="bg-sky-800 rounded-md font-bold  text-white px-5 py-2" id="all-filter-btn">Total</button>
+            <button onclick="toggleStyle('interview-filter-btn')"
+                class="bg-gray-300 rounded-md font-bold text-gray-500 px-5 py-2"
                 id="interview-filter-btn">Interview</button>
-            <button onclick="toggleStyle('rejected-filter-btn')" class="bg-gray-300 rounded-md font-bold text-gray-500 px-5 py-2"
+            <button onclick="toggleStyle('rejected-filter-btn')"
+                class="bg-gray-300 rounded-md font-bold text-gray-500 px-5 py-2"
                 id="rejected-filter-btn">REJECTED</button>
         </div>
 
@@ -58,27 +60,32 @@
 
         </section>
 
+        <!-- All cards -->
         <section id="totalCards" class="space-y-6">
 
             <!-- card 1 -->
-            <div class="card flex justify-between border p-8">
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
                 <div class="space-y-6">
                     <div>
-                        <p class="jobName text-4xl">Mobile First Corp 1</p>
-                        <p class="latinName">React Native Developer</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">Mobile First Corp 1</p>
+                        <p class="designation font-bold text-lg text-gray-500">React Native Developer</p>
                     </div>
                     <div class="flex gap-2">
-                        <p class="aboutJob bg-gray-200 px-5">Remote • Full-time • $130,000 - $175,000|</p>
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $130,000 - $175,000
+                        </p>
                     </div>
 
-                    <p class="status">Not Applied</p>
-                    <p class="jobDescription">Build cross-platform mobile applications using React Native. Work on
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Build cross-platform mobile applications using React Native.
+                        Work on
                         products used
                         by millions of users worldwide.</p>
 
                     <div class="flex gap-5">
-                        <button class="interview-btn bg-green-200 px-4 py-2">INTERVIEW</button>
-                        <button class="rejected-btn bg-red-200 px-4 py-2">REJECTED</button>
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
                     </div>
                 </div>
 
@@ -90,24 +97,24 @@
             </div>
 
             <!-- card 2 -->
-            <div class="card flex justify-between border p-8">
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
                 <div class="space-y-6">
                     <div>
-                        <p class="jobName text-4xl">Mobile First Corp 2</p>
-                        <p class="latinName">React Native Developer</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">Skyline Tech</p>
+                        <p class="designation font-bold text-lg text-gray-500">Frontend Developer</p>
                     </div>
                     <div class="flex gap-2">
-                        <p class="aboutJob bg-gray-200 px-5">Remote • Full-time • $130,000 - $175,000|</p>
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $120k-$150k</p>
                     </div>
 
-                    <p class="status">Not Applied</p>
-                    <p class="jobDescription">Build cross-platform mobile applications using React Native. Work on
-                        products used
-                        by millions of users worldwide.</p>
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Design responsive UI components with React & Tailwind.</p>
 
                     <div class="flex gap-5">
-                        <button class="interview-btn bg-green-200 px-4 py-2">INTERVIEW</button>
-                        <button class="rejected-btn bg-red-200 px-4 py-2">REJECTED</button>
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
                     </div>
                 </div>
 
@@ -119,24 +126,175 @@
             </div>
 
             <!-- card 3 -->
-            <div class="card flex justify-between border p-8">
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
                 <div class="space-y-6">
                     <div>
-                        <p class="jobName text-4xl">Mobile First Corp 3</p>
-                        <p class="latinName">React Native Developer</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <p class="aboutJob bg-gray-200 px-5">Remote • Full-time • $130,000 - $175,000|</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">Nova Labs</p>
+                        <p class="designation font-bold text-lg text-gray-500">Backend Engineer</p>
                     </div>
 
-                    <p class="status">Not Applied</p>
-                    <p class="jobDescription">Build cross-platform mobile applications using React Native. Work on
-                        products used
-                        by millions of users worldwide.</p>
+                    <div class="flex gap-2">
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $110k-$140k</p>
+                    </div>
+
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Build scalable APIs and manage databases.</p>
 
                     <div class="flex gap-5">
-                        <button class="interview-btn bg-green-200 px-4 py-2">INTERVIEW</button>
-                        <button class="rejected-btn bg-red-200 px-4 py-2">REJECTED</button>
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
+                        <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!--card 4 -->
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
+                <div class="space-y-6">
+                    <div>
+                        <p class="jobName text-3xl font-bold text-blue-950">CloudCore Solutions</p>
+                        <p class="designation font-bold text-lg text-gray-500">Fullstack Developer</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $125k-$155k</p>
+                    </div>
+
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Develop end-to-end solutions with Node.js & React.</p>
+
+                    <div class="flex gap-5">
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
+                        <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- card 5 -->
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
+                <div class="space-y-6">
+                    <div>
+                        <p class="jobName text-3xl font-bold text-blue-950">GreenByte Inc.</p>
+                        <p class="designation font-bold text-lg text-gray-500">Data Analyst</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $100k-$130k</p>
+                    </div>
+
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Analyze data for insights & decisions.</p>
+
+                    <div class="flex gap-5">
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
+                        <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- card 6 -->
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
+                <div class="space-y-6">
+                    <div>
+                        <p class="jobName text-3xl font-bold text-blue-950">QuantumSoft</p>
+                        <p class="designation font-bold text-lg text-gray-500">DevOps Engineer</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $115k-$145k</p>
+                    </div>
+
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Maintain CI/CD pipelines & cloud infra.</p>
+
+                    <div class="flex gap-5">
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
+                        <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- card 7 -->
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
+                <div class="space-y-6">
+                    <div>
+                        <p class="jobName text-3xl font-bold text-blue-950">Aurora Interactive</p>
+                        <p class="designation font-bold text-lg text-gray-500">UI/UX Designer</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $105k-$135k</p>
+                    </div>
+
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Create user-friendly interface designs.</p>
+
+                    <div class="flex gap-5">
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
+                        <i class="text-gray-500 fa-regular fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- card 8 -->
+            <div class="card flex justify-between bg-gray-200 rounded-lg p-6">
+                <div class="space-y-6">
+                    <div>
+                        <p class="jobName text-3xl font-bold text-blue-950">NextGen Robotics</p>
+                        <p class="designation font-bold text-lg text-gray-500">ML Engineer</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $130k-$160k</p>
+                    </div>
+
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Develop AI & ML solutions.</p>
+
+                    <div class="flex gap-5">
+                        <button
+                            class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button
+                            class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
                     </div>
                 </div>
 

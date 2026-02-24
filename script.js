@@ -45,12 +45,14 @@ function toggleStyle(id) {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderInterview()
+
         jobCounter.innerText = interviewList.length + " jobs"
 
     } else if (id == 'all-filter-btn') {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
-        jobCounter.innerText = allCardSection.children.length + " jobs"
+
+        // jobCounter.innerText = allCardSection.children.length + " jobs"
 
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
@@ -68,6 +70,7 @@ mainContainer.addEventListener('click', function (event) {
         const parenNode = event.target.parentNode.parentNode;
 
         const jobName = parenNode.querySelector('.jobName').innerText
+        const designation = parenNode.querySelector('.designation').innerText
         const aboutJob = parenNode.querySelector('.aboutJob').innerText
         const status = parenNode.querySelector('.status').innerText
         const jobDescription = parenNode.querySelector('.jobDescription').innerText
@@ -76,6 +79,7 @@ mainContainer.addEventListener('click', function (event) {
 
         const cardInfo = {
             jobName,
+            designation,
             aboutJob,
             status: 'INTERVIEW',
             jobDescription
@@ -96,10 +100,12 @@ mainContainer.addEventListener('click', function (event) {
         calculateCount()
 
 
-    } else if (event.target.classList.contains('rejected-btn')) {
+    }
+    else if (event.target.classList.contains('rejected-btn')) {
         const parenNode = event.target.parentNode.parentNode;
 
         const jobName = parenNode.querySelector('.jobName').innerText
+        const designation = parenNode.querySelector('.designation').innerText
         const aboutJob = parenNode.querySelector('.aboutJob').innerText
         const status = parenNode.querySelector('.status').innerText
         const jobDescription = parenNode.querySelector('.jobDescription').innerText
@@ -108,6 +114,7 @@ mainContainer.addEventListener('click', function (event) {
 
         const cardInfo = {
             jobName,
+            designation,
             aboutJob,
             status: 'REJECTED',
             jobDescription
@@ -128,6 +135,26 @@ mainContainer.addEventListener('click', function (event) {
         calculateCount()
 
     }
+    else if (event.target.closest('.btn-delete')) {
+
+        const card = event.target.closest('.card');
+
+        const jobName = card.querySelector('.jobName').innerText;
+
+        interviewList = interviewList.filter(item => item.jobName !== jobName);
+        rejectedList = rejectedList.filter(item => item.jobName !== jobName);
+
+        card.remove();
+
+        calculateCount();
+
+        if (currentStatus === 'interview-filter-btn') {
+            renderInterview();
+        }
+        else if (currentStatus === 'rejected-filter-btn') {
+            renderReject();
+        }
+    }
 
 })
 
@@ -138,35 +165,35 @@ function renderInterview() {
     for (let interview of interviewList) {
 
         let div = document.createElement('div');
-        div.className = 'card flex justify-between border p-8'
-        div.innerHTML = `
-            <div class="space-y-6">
-                    <!-- part 1 -->
+        div.className = 'card flex justify-between bg-gray-200 rounded-lg p-6'
+        div.innerHTML = 
+            `
+                <div class="space-y-6">
                     <div>
-                        <p class="jobName text-4xl">${interview.jobName}</p>
-                        <p class="latinName">Latin Name</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">Mobile First Corp 1</p>
+                        <p class="designation font-bold text-lg text-gray-500">React Native Developer</p>
                     </div>
-
-                    <!-- part 2 -->
                     <div class="flex gap-2">
-                        <p class="aboutJob bg-gray-200 px-5">Bright Indicate</p>
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $130,000 - $175,000|</p>
                     </div>
-                    <!-- part 3 -->
-                     <p class="status">${interview.status}</p>
-                     <p class="jobDescription">New leaf unfurling by the east window.</p>
 
-                     <div class="flex gap-5">
-                        <button class="interview-btn bg-green-200 px-4 py-2">interview</button>
-                        <button class="rejected-btn bg-red-200 px-4 py-2">REJECTED</button>
-                     </div>
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Build cross-platform mobile applications using React Native. Work on
+                        products used
+                        by millions of users worldwide.</p>
+
+                    <div class="flex gap-5">
+                        <button class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
                 </div>
 
-                <!-- main part 2 -->
                 <div>
                     <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </button>
                 </div>
+
         `
         filterSection.appendChild(div)
     }
@@ -175,41 +202,40 @@ function renderInterview() {
 function renderReject() {
 
     filterSection.innerHTML = ''
-    
+
     // crating innerHtml
     for (let rejected of rejectedList) {
 
         let div = document.createElement('div');
-        div.className = 'card flex justify-between border p-8'
-        div.innerHTML = `
-         <div class="space-y-6">
-                    <!-- part 1 -->
+        div.className = 'card flex justify-between bg-gray-200 rounded-lg p-6'
+        div.innerHTML = 
+            `
+                <div class="space-y-6">
                     <div>
-                        <p class="jobName text-4xl">${rejected.jobName}</p>
-                        <p class="latinName">Latin Name</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">Mobile First Corp 1</p>
+                        <p class="designation font-bold text-lg text-gray-500">React Native Developer</p>
                     </div>
-
-                    <!-- part 2 -->
                     <div class="flex gap-2">
-                        <p class="aboutJob bg-gray-200 px-5">Bright Indicate</p>
+                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $130,000 - $175,000|</p>
                     </div>
-                    <!-- part 3 -->
-                     <p class="status">${rejected.status}</p>
-                     <p class="jobDescription">New leaf unfurling by the east window.</p>
 
-                     <div class="flex gap-5">
-                        <button class="interview-btn bg-green-200 px-4 py-2">interview</button>
-                        <button class="rejected-btn bg-red-200 px-4 py-2">REJECTED</button>
-                     </div>
+                    <p class="status font-bold text-blue-950">NOT APPLIED</p>
+                    <p class="jobDescription text-gray-700">Build cross-platform mobile applications using React Native. Work on
+                        products used
+                        by millions of users worldwide.</p>
+
+                    <div class="flex gap-5">
+                        <button class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
+                        <button class="rejected-btn border rounded-md border-red-400 text-red-500 font-bold px-4 py-2">REJECTED</button>
+                    </div>
                 </div>
 
-                <!-- main part 2 -->
                 <div>
                     <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </button>
-                </div>
-        `
+                </div>       
+            `
         filterSection.appendChild(div)
     }
 }
