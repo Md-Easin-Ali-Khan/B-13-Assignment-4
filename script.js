@@ -5,6 +5,7 @@ let currentStatus = 'all'
 let total = document.getElementById('total');
 let interviewCount = document.getElementById('interviewCount')
 let rejectedCount = document.getElementById('rejectedCount');
+let jobCounter = document.getElementById('jobCounter');
 
 const allFilterBtn = document.getElementById('all-filter-btn')
 const interviewFilterBtn = document.getElementById('interview-filter-btn')
@@ -25,37 +26,43 @@ calculateCount()
 
 // toggleFunction
 function toggleStyle(id) {
-    allFilterBtn.classList.add('bg-gray-300', 'text-black')
-    interviewFilterBtn.classList.add('bg-gray-300', 'text-black')
-    rejectedFilterBtn.classList.add('bg-gray-300', 'text-black')
+    allFilterBtn.classList.add('bg-gray-300', 'text-white')
+    interviewFilterBtn.classList.add('bg-gray-300', 'text-white')
+    rejectedFilterBtn.classList.add('bg-gray-300', 'text-white')
 
-    allFilterBtn.classList.remove('bg-black', 'text-white')
-    interviewFilterBtn.classList.remove('bg-black', 'text-white')
-    rejectedFilterBtn.classList.remove('bg-black', 'text-white')
+    allFilterBtn.classList.remove('bg-sky-800', 'text-white')
+    interviewFilterBtn.classList.remove('bg-sky-800', 'text-white')
+    rejectedFilterBtn.classList.remove('bg-sky-800', 'text-white')
 
     const selected = document.getElementById(id)
 
     currentStatus = id
-    selected.classList.remove('bg-gray-300', 'text-black')
-    selected.classList.add('bg-black', 'text-white')
+    selected.classList.remove('bg-gray-300', 'text-white')
+    selected.classList.add('bg-sky-800', 'text-white')
 
     // filtering area
     if (id == 'interview-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderInterview()
+        jobCounter.innerText = interviewList.length + " jobs"
+
     } else if (id == 'all-filter-btn') {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
+        jobCounter.innerText = allCardSection.children.length + " jobs"
+
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderReject()
+
+        jobCounter.innerText = rejectedList.length + " jobs"
     }
 }
 
 
-// step 2 delegation
+// delegation
 mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('interview-btn')) {
         const parenNode = event.target.parentNode.parentNode;
@@ -156,7 +163,7 @@ function renderInterview() {
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="btn-delete border-1 border-gray-400 rounded-full  px-2 py-2">
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </button>
                 </div>
@@ -198,7 +205,7 @@ function renderReject() {
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="btn-delete border-1 border-gray-400 rounded-full  px-2 py-2">
+                    <button class="btn-delete border border-gray-400 rounded-full  px-2 py-2">
                         <i class="text-gray-500 fa-regular fa-trash-can"></i>
                     </button>
                 </div>
