@@ -26,9 +26,9 @@ function calculateCount() {
     rejectedCount.innerText = rejectedList.length;
 
     if (currentStatus === 'interview-filter-btn') {
-        jobCounter.innerText = interviewList.length + " jobs";
+        jobCounter.innerText = interviewList.length + " of 8 jobs";
     } else if (currentStatus === 'rejected-filter-btn') {
-        jobCounter.innerText = rejectedList.length + " jobs";
+        jobCounter.innerText = rejectedList.length + " of 8 jobs";
     } else {
         jobCounter.innerText = totalCards + " jobs";
     }
