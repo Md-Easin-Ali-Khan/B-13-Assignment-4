@@ -17,9 +17,21 @@ const filterSection = document.getElementById('filtered-section')
 
 
 function calculateCount() {
-    total.innerText = document.querySelectorAll('#totalCards .card').length
+    const totalCards = document.querySelectorAll('#totalCards .card').length
+
+    total.innerText = totalCards
     interviewCount.innerText = interviewList.length
     rejectedCount.innerText = rejectedList.length
+
+    if (currentStatus === 'interview-filter-btn') {
+        jobCounter.innerText = interviewList.length + " jobs"
+    }
+    else if (currentStatus === 'rejected-filter-btn') {
+        jobCounter.innerText = rejectedList.length + " jobs"
+    }
+    else {
+        jobCounter.innerText = totalCards + " jobs"
+    }
 }
 
 calculateCount()
@@ -46,21 +58,20 @@ function toggleStyle(id) {
         filterSection.classList.remove('hidden')
         renderInterview()
 
-        jobCounter.innerText = interviewList.length + " jobs"
 
     } else if (id == 'all-filter-btn') {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
 
-        jobCounter.innerText = allCardSection.children.length + " jobs"
 
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderReject()
 
-        jobCounter.innerText = rejectedList.length + " jobs"
     }
+    
+    calculateCount();
 }
 
 
