@@ -17,7 +17,7 @@ const filterSection = document.getElementById('filtered-section')
 
 
 function calculateCount() {
-    total.innerText = allCardSection.children.length //3
+    total.innerText = document.querySelectorAll('#totalCards .card').length
     interviewCount.innerText = interviewList.length
     rejectedCount.innerText = rejectedList.length
 }
@@ -52,7 +52,7 @@ function toggleStyle(id) {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
 
-        // jobCounter.innerText = allCardSection.children.length + " jobs"
+        jobCounter.innerText = allCardSection.children.length + " jobs"
 
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
@@ -170,17 +170,15 @@ function renderInterview() {
             `
                 <div class="space-y-6">
                     <div>
-                        <p class="jobName text-3xl font-bold text-blue-950">Mobile First Corp 1</p>
-                        <p class="designation font-bold text-lg text-gray-500">React Native Developer</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">${interview.jobName}</p>
+                        <p class="designation font-bold text-lg text-gray-500">${interview.designation}</p>
                     </div>
                     <div class="flex gap-2">
-                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $130,000 - $175,000|</p>
+                        <p class="aboutJob font-bold text-lg text-gray-500">${interview.aboutJob}</p>
                     </div>
 
                     <p class="status font-bold text-blue-950">NOT APPLIED</p>
-                    <p class="jobDescription text-gray-700">Build cross-platform mobile applications using React Native. Work on
-                        products used
-                        by millions of users worldwide.</p>
+                    <p class="jobDescription text-gray-700">${interview.jobDescription}</p>
 
                     <div class="flex gap-5">
                         <button class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
@@ -212,17 +210,15 @@ function renderReject() {
             `
                 <div class="space-y-6">
                     <div>
-                        <p class="jobName text-3xl font-bold text-blue-950">Mobile First Corp 1</p>
-                        <p class="designation font-bold text-lg text-gray-500">React Native Developer</p>
+                        <p class="jobName text-3xl font-bold text-blue-950">${rejected.jobName}</p>
+                        <p class="designation font-bold text-lg text-gray-500">${rejected.designation}</p>
                     </div>
                     <div class="flex gap-2">
-                        <p class="aboutJob font-bold text-lg text-gray-500">Remote • Full-time • $130,000 - $175,000|</p>
+                        <p class="aboutJob font-bold text-lg text-gray-500">${rejected.aboutJob}</p>
                     </div>
 
                     <p class="status font-bold text-blue-950">NOT APPLIED</p>
-                    <p class="jobDescription text-gray-700">Build cross-platform mobile applications using React Native. Work on
-                        products used
-                        by millions of users worldwide.</p>
+                    <p class="jobDescription text-gray-700">${rejected.jobDescription}</p>
 
                     <div class="flex gap-5">
                         <button class="interview-btn border rounded-md border-green-600 text-green-600 font-bold px-4 py-2">INTERVIEW</button>
