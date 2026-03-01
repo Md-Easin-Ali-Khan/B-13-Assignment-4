@@ -1,6 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
-let currentStatus = 'all';
+let currentStatus = 'all-filter-btn';
 
 let total = document.getElementById('total');
 let interviewCount = document.getElementById('interviewCount');
@@ -114,6 +114,10 @@ mainContainer.addEventListener('click', function (event) {
 
         interviewList = interviewList.filter(item => item.jobName !== jobName);
         rejectedList = rejectedList.filter(item => item.jobName !== jobName);
+
+        const mainCard = Array.from(allCardSection.querySelectorAll('.card'))
+            .find(c => c.querySelector('.jobName').innerText === jobName);
+        if (mainCard) mainCard.querySelector('.status').innerText = 'NOT APPLIED';
         card.remove();
 
         if (currentStatus === 'interview-filter-btn') renderInterview();
@@ -123,7 +127,7 @@ mainContainer.addEventListener('click', function (event) {
     }
 });
 
-// Render functions
+// Render Interview function
 function renderInterview() {
     filterSection.innerHTML = '';
     interviewList.forEach(interview => {
@@ -154,6 +158,7 @@ function renderInterview() {
     });
 }
 
+// Render Rejected function
 function renderReject() {
     filterSection.innerHTML = '';
     rejectedList.forEach(rejected => {
